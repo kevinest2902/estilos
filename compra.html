@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Camisa</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #333; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: white; margin: 0 1rem; text-decoration: none; }
+        .container { padding: 2rem; text-align: center; }
+        .image { width: 300px; height: auto; }
+        .colors span { display: inline-block; width: 20px; height: 20px; border-radius: 50%; margin: 0 5px; cursor: pointer; }
+        .btn { margin-top: 1rem; padding: 0.5rem 1rem; background-color: #333; color: white; border: none; cursor: pointer; }
+    </style>
+    <script>
+        function changeImage(color) {
+            const image = document.getElementById('product-image');
+            image.src = color + '.jpg';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Catálogo</a>
+            <a href="#">Nosotros</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Compra tu Camisa</h2>
+        <img id="product-image" src="red.jpg" alt="Camisa" class="image">
+        <p>Precio: $50.000</p>
+        <label for="size">Talla:</label>
+        <select id="size">
+            <option>S</option>
+            <option>M</option>
+            <option>XL</option>
+        </select>
+        <div class="colors">
+            <span style="background-color: red;" onclick="changeImage('red')"></span>
+            <span style="background-color: blue;" onclick="changeImage('blue')"></span>
+            <span style="background-color: green;" onclick="changeImage('green')"></span>
+        </div>
+        <button class="btn">Comprar</button>
+    </div>
+</body>
+</html>
